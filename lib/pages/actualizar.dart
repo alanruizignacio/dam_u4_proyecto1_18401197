@@ -34,7 +34,6 @@ class _ActualizarState extends State<Actualizar> {
       resguarporController.text = arguments["resguardadopor"] ?? '';
     }
 
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Actualizar vehiculo"),leading: Icon(Icons.update),

@@ -1,3 +1,4 @@
+import 'package:dam_u4_proyecto1_18401197/pages/bitacora.dart';
 import 'package:dam_u4_proyecto1_18401197/services/firebase_service.dart';
 import 'package:flutter/material.dart';
 
@@ -72,6 +73,19 @@ class _InicioState extends State<Inicio> {
                                     );});
                                     Navigator.of(context).pop();
                                   },
+                                ),
+                                TextButton(
+                                  child: Text("Bitacora"),
+                                  onPressed: () async{
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => Bitacoras(vehiculoId: snapshot.data?[index]['uid'] ?? ''),
+                                        ),
+                                      );
+                                      setState(() {});
+                                      Navigator.of(context).pop();
+                                    },
                                 ),
                                 TextButton(
                                   child: Text('Cancelar',

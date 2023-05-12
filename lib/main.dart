@@ -1,4 +1,5 @@
 import 'package:dam_u4_proyecto1_18401197/pages/actualizar.dart';
+import 'package:dam_u4_proyecto1_18401197/pages/actualizarBitacora.dart';
 import 'package:dam_u4_proyecto1_18401197/pages/add_name_page.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/add': (context) => const AddNamePage(),
         '/act': (context) => const Actualizar(),
+        '/actbi': (context) => const ActualizarBi(),
       },
     );
   }
