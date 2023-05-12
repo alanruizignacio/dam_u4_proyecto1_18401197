@@ -88,6 +88,6 @@ Future<void> insertarBitacora(String vehiculoId, Map<String, dynamic> bitacoraDa
 Future<void> actualizarBitacora(String vehiculoId, String bitacoraId, String verifico, DateTime fechaverificacion) async {
   await db.collection('vehiculo').doc(vehiculoId).collection('bitacora').doc(bitacoraId).update({
     'verifico': verifico,
-    'fechaverificacion': fechaverificacion,
+    'fechaverificacion': Timestamp.fromDate(fechaverificacion), // convierte DateTime a Timestamp
   });
 }

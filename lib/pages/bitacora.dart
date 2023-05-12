@@ -25,8 +25,9 @@ class _BitacorasState extends State<Bitacoras> {
               itemBuilder: (context, index) {
                 final bitacoraData = snapshot.data?[index];
                 return ListTile(
-                  title: Text((bitacoraData?['fecha'] as Timestamp)?.toDate().toString() ?? 'No disponible',),
-                  subtitle: Text(bitacoraData?['evento'] ?? 'Evento no disponible',),
+                  title: Text(bitacoraData?['evento'] ?? 'Evento no disponible',),
+                  subtitle: Text((bitacoraData?['fecha'] as Timestamp)?.toDate().toString() ?? 'No disponible',),
+
 
                   onTap: (){
                     showDialog(
@@ -39,10 +40,10 @@ class _BitacorasState extends State<Bitacoras> {
                               child: Text('Actualizar'),
                               onPressed: () async {
                                 await Navigator.pushNamed(context, "/actbi",arguments: {
-                                  "uid": snapshot.data?[index]['uid'],
-                                  "evento":snapshot.data?[index]['evento'],
-                                  "recursos":snapshot.data?[index]['recursos'],
+                                  "bitacoraId": snapshot.data?[index]['uid'],
+                                  "fechaverificacion":snapshot.data?[index]['fechaverificacion'] as Timestamp,
                                   "verifico":snapshot.data?[index]['verifico'],
+                                  "vehiculoId": widget.vehiculoId,
                                 });
                                 setState(() {const Center(
                                     child: Text("Cargando...")
